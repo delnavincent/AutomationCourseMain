@@ -27,25 +27,27 @@ public class FileUpload extends Base {
 		driver.navigate().to("https://www.ilovepdf.com/pdf_to_word");
 		WebElement selectPdfFile = driver.findElement(By.xpath("//a[@id='pickfiles']"));
 		selectPdfFile.click();
-		
+
 		// to get path to Robot class// file path passed as parameter to StringSelection
-		StringSelection s = new StringSelection("C:\\Users\\hp\\eclipse-workspace\\AutomationCourseMain\\src\\test\\resources\\sample-5-page-pdf-a4-size.pdf");
-		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s, null);// to share the path in StringSelection s to clipboard
-		
-		// Robot object creation																	 
+		StringSelection s = new StringSelection(
+				"C:\\Users\\hp\\eclipse-workspace\\AutomationCourseMain\\src\\test\\resources\\sample-5-page-pdf-a4-size.pdf");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s, null);// to share the path in StringSelection s
+																				// to clipboard
+
+		// Robot object creation
 		Robot robot = new Robot();
-		robot.delay(2500);//apply a delay of 2500 milliseconds to find the path
+		robot.delay(2500);// apply a delay of 2500 milliseconds to find the path
 		robot.keyPress(KeyEvent.VK_ENTER);
 
 		robot.keyRelease(KeyEvent.VK_ENTER);
-		
-		//pressing ctrl+v
+
+		// pressing ctrl+v
 		robot.keyPress(KeyEvent.VK_CONTROL);
 		robot.keyPress(KeyEvent.VK_V);
-		
-		//releasing ctrl+v
 
-		robot.keyRelease(KeyEvent.VK_CONTROL);// release command
+		// releasing ctrl+v
+
+		robot.keyRelease(KeyEvent.VK_CONTROL);
 		robot.keyRelease(KeyEvent.VK_V);
 		robot.keyPress(KeyEvent.VK_ENTER);
 
